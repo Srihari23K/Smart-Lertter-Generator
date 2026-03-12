@@ -1,6 +1,6 @@
-Flask
-Flask-SQLAlchemy
-python-docx
-reportlab
+Flask==2.3.3
+Flask-SQLAlchemy==3.1.1
+reportlab==4.0.9
+python-docx==1.1.0
+spacy==3.7.
 gunicorn
-Jinja2

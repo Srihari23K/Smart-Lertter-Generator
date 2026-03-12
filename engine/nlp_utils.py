@@ -1,11 +1,7 @@
-
 import re
 import os
 from docx import Document
-
-
 PLACEHOLDER_PATTERN = r"\{\{(.*?)\}\}"  
-
 def extract_placeholders(template_text: str):
     """
     Extracts placeholders from a template like:
@@ -13,8 +9,6 @@ def extract_placeholders(template_text: str):
     Returns: ['name', 'department']
     """
     return re.findall(PLACEHOLDER_PATTERN, template_text)
-
-
 def replace_placeholders(template_text: str, values: dict):
     """
     Replaces placeholders with the provided dictionary values.
@@ -23,8 +17,6 @@ def replace_placeholders(template_text: str, values: dict):
         key = match.group(1)
         return str(values.get(key, f"<missing:{key}>"))
     return re.sub(PLACEHOLDER_PATTERN, replacer, template_text)
-
-
 def load_template_text(file_path):
     """
     Loads text from a .txt or .docx template file.
