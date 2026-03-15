@@ -1,3 +1,4 @@
+from datetime import datetime
 from .db_models import TemplateModel
 from .nlp_utils import extract_placeholders, replace_placeholders
 
@@ -13,6 +14,7 @@ class TemplateEngine:
     name="student_leave",
     title=" Leave Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nDepartment of {{department}},\n"
         "{{college name}}\n\n"
         "Respected Sir/Madam,\n\n"
@@ -28,11 +30,47 @@ class TemplateEngine:
         "Roll No: {{roll_number}}\n"
         "Contact: {{contact_number}}\n"
     )
+),"half_day_leave":TemplateModel(
+    name="Half_Day_leave",
+    title="Half Day Leave",
+    content=(
+        "Date: {{date}}\n\n"
+        "To\n"
+        "{{greeting}}\n"
+        "{{department}}\n"
+        "{{college_name}}\n\n"
+
+        "Subject: {{subject}}\n\n"
+
+        "Respected Sir/Madam,\n\n"
+
+        "I, {{name}}, Roll No: {{roll number}}, am a {{year}} Year student of {{department}} ({{section}})."
+        "I am suffering from {{health_issue}} today and due to this health condition I "
+        "am unable to continue attending the remaining classes for the day. As it is "
+        "becoming difficult for me to concentrate and actively participate in the "
+        "lectures, I kindly request you to grant me half-day leave for today.\n\n"
+
+        "I assure you that I will go through the topics covered during the missed "
+        "classes and complete any assignments or academic work that may be given. "
+        "I will make every effort to ensure that my absence does not affect my "
+        "academic progress.\n\n"
+
+        "I sincerely request you to consider my situation and grant me permission "
+        "for the same.\n\n"
+
+        "Thank you for your time and consideration.\n\n"
+
+        "Yours sincerely,\n"
+        "{{name}}\n"
+        "Roll No: {{roll_number}}\n"
+        "Contact: {{contact_number}}\n"
+    )
 )
 ,"medical_leave": TemplateModel(
     name="medical_leave",
     title="Medical Leave Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected Sir/Madam,\n\n"
@@ -54,6 +92,7 @@ class TemplateEngine:
     name="internship_permission",
     title="Internship / Industrial Visit Permission Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected Sir/Madam,\n\n"
@@ -73,6 +112,7 @@ class TemplateEngine:
     name="internship_application",
     title="Application for Internship to Company",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\n{{company_name}},\n\n"
         "Subject: {{subject}}\n\n"
         "Dear {{recipient_name}},\n\n"
@@ -93,6 +133,7 @@ class TemplateEngine:
     name="project_extension_request",
     title="Project Deadline Extension Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected Sir/Madam,\n\n"
@@ -115,6 +156,7 @@ class TemplateEngine:
     name="recommendation_request",
     title="Request for Recommendation / Reference Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -137,6 +179,7 @@ class TemplateEngine:
     name="revaluation_request",
     title="Re-evaluation / Exam Paper Rechecking Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nController of Examinations,\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -158,6 +201,7 @@ class TemplateEngine:
     name="certificate_request",
     title="Bonafide / Enrollment / Character Certificate Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nOffice of the Registrar,\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -181,6 +225,7 @@ class TemplateEngine:
     name="transfer_certificate_request",
     title="Transfer / Migration Certificate Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nOffice of the Registrar,\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -205,6 +250,7 @@ class TemplateEngine:
     name="training_completion_request",
     title="Internship / Training Completion Certificate Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\n{{organization_name}},\n\n"
         "Respected {{recipient_name}},\n\n"
         "Subject: {{subject}}\n\n"
@@ -223,6 +269,7 @@ class TemplateEngine:
     name="hostel_request",
     title="Hostel / Accommodation Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nWarden, {{hostel_name}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -243,6 +290,7 @@ class TemplateEngine:
     name="fee_concession_request",
     title="Fee Concession / Scholarship Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nThe Principal,\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -264,6 +312,7 @@ class TemplateEngine:
     name="complaint_letter",
     title="Complaint / Grievance Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -285,6 +334,7 @@ class TemplateEngine:
     name="event_permission_request",
     title="Permission Letter for College Event / Extracurricular Activity",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -305,6 +355,7 @@ class TemplateEngine:
     name="course_registration_request",
     title="Course Registration / Add-Drop Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -325,6 +376,7 @@ class TemplateEngine:
     name="attendance_permission_request",
     title="Permission to Attend Exam Despite Low Attendance",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -346,6 +398,7 @@ class TemplateEngine:
     name="college_tour_leave_request",
     title="Leave Request for College Tour / Study Trip",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -366,6 +419,7 @@ class TemplateEngine:
     name="makeup_exam_request",
     title="Request for Make-up / Supplementary Exam",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nController of Examinations,\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -386,6 +440,7 @@ class TemplateEngine:
     name="transcript_request",
     title="Grade / Transcript Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nOffice of the Registrar,\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -405,6 +460,7 @@ class TemplateEngine:
     name="academic_counseling_request",
     title="Request for Academic Counseling / Mentorship Meeting",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -425,6 +481,7 @@ class TemplateEngine:
     name="hostel_room_change_request",
     title="Hostel / Room Change Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nWarden, {{hostel_name}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -444,6 +501,7 @@ class TemplateEngine:
     name="library_access_request",
     title="Library Membership / Access Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nLibrarian, {{library_name}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -463,6 +521,7 @@ class TemplateEngine:
     name="facilities_complaint_letter",
     title="Complaint Letter Regarding College Facilities",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -484,6 +543,7 @@ class TemplateEngine:
     name="duplicate_id_request",
     title="Request for Student ID / Duplicate ID Card",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nOffice of the Registrar,\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -503,6 +563,7 @@ class TemplateEngine:
     name="bus_pass_request",
     title="College Transportation / Bus Pass Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nTransport Office,\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -523,6 +584,7 @@ class TemplateEngine:
     name="internship_extension_resignation",
     title="Internship Extension / Resignation Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\n{{organization_name}},\n\n"
         "Respected {{recipient_name}},\n\n"
         "Subject: {{subject}}\n\n"
@@ -540,6 +602,7 @@ class TemplateEngine:
     name="job_recommendation_request",
     title="Placement / Job Recommendation Request Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -560,6 +623,7 @@ class TemplateEngine:
     name="project_mentor_request",
     title="Project Mentor Request / Supervisor Change Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nHead of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -576,17 +640,53 @@ class TemplateEngine:
         "Contact: {{contact_number}}\n"
         "Email: {{email}}\n"
     )
+),"family_function_leave": TemplateModel(
+    name="family_function_leave",
+    title="Leave Letter for Family Function",
+    content=(
+        "Date: {{date}}\n\n"
+
+        "To\n"
+        "{{recipient_designation}}\n"
+        "{{department}}\n"
+        "{{college_name}}\n\n"
+
+        "Subject: {{subject}}\n\n"
+
+        "Respected Sir/Madam,\n\n"
+        "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
+        "I would like to inform you that I need to attend a family "
+        "{{family_event}} at my hometown. Due to this family commitment, "
+        "I will not be able to attend the classes from {{start_date}} "
+        "to {{end_date}}.\n\n"
+
+        "This function is important for my family, and my presence is "
+        "required during this time. I assure you that I will make up for "
+        "the missed lectures and complete any assignments or academic "
+        "work that may be given during my absence.\n\n"
+
+        "I kindly request you to grant me leave for the above-mentioned "
+        "period.\n\n"
+
+        "Thank you for your understanding and consideration.\n\n"
+
+        "Yours faithfully,\n"
+         "{{name}}\n"
+        "Roll No: {{roll_number}}\n"
+        "Contact: {{contact_number}}\n"
+    )
 )
 ,"competition_permission_request": TemplateModel(
     name="competition_permission_request",
     title="Hackathon / Competition Participation Permission Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
-        "am writing to request permission to participate in the {{competition_name}} scheduled on {{competition_date}} at {{competition_location}}.\n\n"
+        " I am writing to request permission to participate in the {{competition_name}} scheduled on {{competition_date}} at {{competition_location}}.\n\n"
         "This competition aims to {{competition_purpose}} and will involve {{number_of_participants}} participants from our college. "
         "We will ensure full adherence to college rules and guidelines.\n\n"
         "I kindly request your approval for my participation.\n\n"
@@ -595,12 +695,13 @@ class TemplateEngine:
         "{{name}}\n"
         "Roll No: {{roll_number}}\n"
         "Contact: {{contact_number}}\n"
-        "Email: {{email}}\n"
+        
     )
 ),"medical_certificate_submission": TemplateModel(
     name="medical_certificate_submission",
     title="Medical Certificate Submission Letter",
     content=(
+        "Date: {{date}}\n\n"
         "To\n{{greeting}},\nOffice of the Registrar / Department of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
@@ -613,7 +714,6 @@ class TemplateEngine:
         "{{name}}\n"
         "Roll No: {{roll_number}}\n"
         "Contact: {{contact_number}}\n"
-        "Email: {{email}}\n"
         "Attachment: Medical Certificate\n"
     )
 )
@@ -622,21 +722,46 @@ class TemplateEngine:
 
     def get_template(self, template_key: str):
         return self.templates.get(template_key, None)
-
+    def normalize_placeholder(self, name):
+        return name.strip().lower().replace(" ", "_")
     def get_placeholders(self, template_key: str):
         template = self.get_template(template_key)
         if not template:
             return []
-        return extract_placeholders(template.content)
+
+        raw = extract_placeholders(template.content)
+
+        normalized = []
+        seen = set()
+
+        for p in raw:
+            n = self.normalize_placeholder(p)
+            if n == "date":
+                continue
+            if n not in seen:
+                seen.add(n)
+                normalized.append(n)
+        return normalized
 
     def generate_letter(self, template_key: str, data: dict):
         template = self.get_template(template_key)
         if not template:
             return "❌ Template not found"
        
+        data["date"] = datetime.now().strftime("%d %B %Y")
+
         if 'subject' not in data:
             data['subject'] = ""
-        return replace_placeholders(template.content, data)
+
+        normalized_data = {}
+
+        for key, value in data.items():
+            normalized_data[self.normalize_placeholder(key)] = value
+
+        for key, value in list(normalized_data.items()):
+            normalized_data[key.replace("_", " ")] = value
+
+        return replace_placeholders(template.content, normalized_data)
 
     def list_templates(self):
         return [{"key": k, "title": v.title} for k, v in self.templates.items()]

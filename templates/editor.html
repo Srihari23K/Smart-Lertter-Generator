@@ -7,7 +7,7 @@
 
     {% for field in placeholders %}
     <div class="form-group">
-        <label>{{ field | capitalize }}</label>
+        <label>{{ field.replace("_"," ").title() }}</label>
         <input type="text" name="{{ field }}" required>
     </div>
     {% endfor %}
