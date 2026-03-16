@@ -15,7 +15,7 @@ class TemplateEngine:
     title=" Leave Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nDepartment of {{department}},\n"
+        "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "{{college name}}\n\n"
         "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
@@ -36,8 +36,8 @@ class TemplateEngine:
     content=(
         "Date: {{date}}\n\n"
         "To\n"
-        "{{designation}}\n"
-        "{{department}}\n"
+        "{{recipient_designation}}\n"
+        "Department of {{department}}\n"
         "{{college_name}}\n\n"
 
         "Subject: {{subject}}\n\n"
@@ -71,7 +71,7 @@ class TemplateEngine:
     title="Medical Leave Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nDepartment of {{department}},\n"
+        "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
@@ -93,7 +93,7 @@ class TemplateEngine:
     title="Internship / Industrial Visit Permission Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nDepartment of {{department}},\n"
+        "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
@@ -113,9 +113,9 @@ class TemplateEngine:
     title="Application for Internship to Company",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\n{{company_name}},\n\n"
+        "To\n{{recipient_designation}},\n{{company_name}},\n\n"
         "Subject: {{subject}}\n\n"
-        "Dear {{recipient_name}},\n\n"
+        "Dear Sir/Madam,\n\n"
         "I am {{name}}, a {{year}} Year student of {{department}} ({{section}}) at {{college_name}}, Roll No: {{roll_number}}. "
         "I am writing to express my interest in an internship position at {{company_name}} in the field of {{field_or_domain}} for the period {{start_date}} to {{end_date}}.\n\n"
         "During my academic program, I have gained knowledge in {{skills_or_courses}} and worked on projects such as {{project_name}}. "
@@ -134,7 +134,7 @@ class TemplateEngine:
     title="Project Deadline Extension Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nDepartment of {{department}},\n"
+        "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
@@ -157,9 +157,9 @@ class TemplateEngine:
     title="Request for Recommendation / Reference Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nDepartment of {{department}},\n"
+        "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to kindly request your recommendation for {{purpose}} at {{organization_name}}.\n\n"
@@ -180,9 +180,9 @@ class TemplateEngine:
     title="Re-evaluation / Exam Paper Rechecking Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nController of Examinations,\n"
+        "To\n{{recipient_designation}},\nController of Examinations,\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "appeared for the {{exam_name}} held on {{exam_date}}. I request re-evaluation/rechecking of my answer paper for the course {{course_code}} - {{course_name}}.\n\n"
@@ -202,9 +202,9 @@ class TemplateEngine:
     title="Bonafide / Enrollment / Character Certificate Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nOffice of the Registrar,\n"
+        "To\n{{recipient_designation}},\nOffice of the Registrar,\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request issuance of a {{certificate_type}} for the purpose of {{purpose}}.\n\n"
@@ -226,9 +226,9 @@ class TemplateEngine:
     title="Transfer / Migration Certificate Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nOffice of the Registrar,\n"
+        "To\n{{recipient_designation}},\nOffice of the Registrar,\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request issuance of my {{certificate_type}} for the purpose of {{purpose}}.\n\n"
@@ -251,8 +251,8 @@ class TemplateEngine:
     title="Internship / Training Completion Certificate Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\n{{organization_name}},\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "To\n{{recipient_designation}},\n{{organization_name}},\n\n"
+        "Respected Sir Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}) at {{college_name}}, "
         "have successfully completed my internship/training at {{organization_name}} from {{start_date}} to {{end_date}} under the guidance of {{mentor_name}}.\n\n"
@@ -270,9 +270,9 @@ class TemplateEngine:
     title="Hostel / Accommodation Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nWarden, {{hostel_name}},\n"
+        "To\n{{recipient_designation}},\nWarden, {{hostel_name}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir / Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request accommodation in {{hostel_name}} for the academic session {{session_year}}.\n\n"
@@ -291,9 +291,9 @@ class TemplateEngine:
     title="Fee Concession / Scholarship Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nThe Principal,\n"
+        "To\n{{recipient_designation}},\nThe Principal,\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir / Mdam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request a fee concession/scholarship for the academic session {{session_year}} due to {{reason_for_request}}.\n\n"
@@ -313,9 +313,9 @@ class TemplateEngine:
     title="Complaint / Grievance Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\n{{department_or_office}},\n"
+        "To\n{{recipient_designation}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir / Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to formally bring to your attention an issue regarding {{issue_description}}.\n\n"
@@ -335,9 +335,9 @@ class TemplateEngine:
     title="Permission Letter for College Event / Extracurricular Activity",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\n{{department_or_office}},\n"
+        "To\n{{recipient_designation}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir / Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "on behalf of {{club_or_team_name}}, am writing to request permission to conduct/participate in {{event_name}} scheduled on {{event_date}} at {{event_location}}.\n\n"
@@ -356,9 +356,9 @@ class TemplateEngine:
     title="Course Registration / Add-Drop Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nDepartment of {{department}},\n"
+        "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir / Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request permission to {{action}} the course '{{course_name}}' for the {{semester}} semester. "
@@ -377,9 +377,9 @@ class TemplateEngine:
     title="Permission to Attend Exam Despite Low Attendance",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nDepartment of {{department}},\n"
+        "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request permission to appear for the {{exam_name}} scheduled on {{exam_date}}, "
@@ -399,9 +399,9 @@ class TemplateEngine:
     title="Leave Request for College Tour / Study Trip",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nDepartment of {{department}},\n"
+        "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request leave from {{start_date}} to {{end_date}} to participate in the college-organized tour/study trip to {{tour_location}}.\n\n"
@@ -420,9 +420,9 @@ class TemplateEngine:
     title="Request for Make-up / Supplementary Exam",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nController of Examinations,\n"
+        "To\n{{recipient_designation}},\nController of Examinations,\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "was unable to appear for the {{exam_name}} held on {{exam_date}} due to {{reason_for_missing_exam}}.\n\n"
@@ -441,9 +441,9 @@ class TemplateEngine:
     title="Grade / Transcript Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nOffice of the Registrar,\n"
+        "To\n{{recipient_designation}},\nOffice of the Registrar,\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request the issuance of my official grade/transcript for {{purpose}}.\n\n"
@@ -461,9 +461,9 @@ class TemplateEngine:
     title="Request for Academic Counseling / Mentorship Meeting",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nDepartment of {{department}},\n"
+        "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request an appointment for academic counseling/mentorship to discuss {{topic_or_issue}}.\n\n"
@@ -482,9 +482,9 @@ class TemplateEngine:
     title="Hostel / Room Change Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nWarden, {{hostel_name}},\n"
+        "To\n{{recipient_designation}},\nWarden, {{hostel_name}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request a change of my hostel room from {{current_room_number}} to {{requested_room_number}} due to {{reason_for_request}}.\n\n"
@@ -502,9 +502,9 @@ class TemplateEngine:
     title="Library Membership / Access Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nLibrarian, {{library_name}},\n"
+        "To\n{{recipient_designation}},\nLibrarian, {{library_name}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request library membership/access to {{library_name}} to utilize resources for my academic activities, research, and assignments.\n\n"
@@ -522,9 +522,9 @@ class TemplateEngine:
     title="Complaint Letter Regarding College Facilities",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\n{{department_or_office}},\n"
+        "To\n{{recipient_designation}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to formally bring to your attention an issue regarding {{facility_issue_description}}.\n\n"
@@ -544,9 +544,9 @@ class TemplateEngine:
     title="Request for Student ID / Duplicate ID Card",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nOffice of the Registrar,\n"
+        "To\n{{recipient_designation}},\nOffice of the Registrar,\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request the issuance of a duplicate student ID card as my previous ID was {{reason_for_duplicate_request}}.\n\n"
@@ -564,9 +564,9 @@ class TemplateEngine:
     title="College Transportation / Bus Pass Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nTransport Office,\n"
+        "To\n{{recipient_designation}},\nTransport Office,\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request the issuance/renewal of my college bus pass for the academic session {{session_year}}.\n\n"
@@ -585,8 +585,8 @@ class TemplateEngine:
     title="Internship Extension / Resignation Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\n{{organization_name}},\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "To\n{{recipient_designation}},\n{{organization_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, a student of {{college_name}}, Roll No: {{roll_number}}, am writing regarding my internship at {{organization_name}}.\n\n"
         "I would like to {{action}} my internship, originally scheduled from {{start_date}} to {{end_date}}, due to {{reason_for_request}}.\n\n"
@@ -603,9 +603,9 @@ class TemplateEngine:
     title="Placement / Job Recommendation Request Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\n{{department_or_office}},\n"
+        "To\n{{recipient_designation}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request your recommendation/reference for placement/job opportunities at {{company_name}}.\n\n"
@@ -624,9 +624,9 @@ class TemplateEngine:
     title="Project Mentor Request / Supervisor Change Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nHead of {{department}},\n"
+        "To\n{{recipient_designation}},\nHead of {{department}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request {{request_type}} for my project titled '{{project_title}}'.\n\n"
@@ -647,7 +647,7 @@ class TemplateEngine:
         "Date: {{date}}\n\n"
 
         "To\n"
-        "{{designation}}\n"
+        "{{recipient_designation}}\n"
         "{{department}}\n"
         "{{college_name}}\n\n"
 
@@ -681,9 +681,9 @@ class TemplateEngine:
     title="Hackathon / Competition Participation Permission Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\n{{department_or_office}},\n"
+        "To\n{{recipient_designation}},\n{{department_or_office}},\n"
         "{{college_name}}\n\n"
-        "Respected {{recipient_name}},\n\n"
+        "Respected Sir/Madam,\n\n"
         "Subject: {{subject}}\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         " I am writing to request permission to participate in the {{competition_name}} scheduled on {{competition_date}} at {{competition_location}}.\n\n"
@@ -702,7 +702,7 @@ class TemplateEngine:
     title="Medical Certificate Submission Letter",
     content=(
         "Date: {{date}}\n\n"
-        "To\n{{designation}},\nOffice of the Registrar / Department of {{department}},\n"
+        "To\n{{recipient_designation}},\nOffice of the Registrar / Department of {{department}},\n"
         "{{college_name}}\n\n"
         "Respected {{recipient_name}},\n\n"
         "Subject: {{subject}}\n\n"
