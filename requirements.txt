@@ -3,3 +3,4 @@ Flask-SQLAlchemy
 reportlab
 python-docx
 gunicorn
+pypdf
