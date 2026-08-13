@@ -777,7 +777,7 @@ class TemplateEngine:
         if not template:
             return "❌ Template not found"
        
-        data["date"] = datetime.now().strftime("%d %B %Y")
+        data["date"] = datetime.now().strftime("%d-%m-%Y")
 
         if 'subject' not in data:
             data['subject'] = ""
@@ -785,6 +785,12 @@ class TemplateEngine:
         normalized_data = {}
 
         for key, value in data.items():
+            if isinstance(value, str):
+                try:
+                    value = datetime.strptime(value, "%Y-%m-%d").strftime("%d-%m-%Y")
+                except ValueError:
+                    pass
+
             normalized_data[self.normalize_placeholder(key)] = value
 
         for key, value in list(normalized_data.items()):
