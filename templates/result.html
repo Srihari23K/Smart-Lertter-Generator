@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Generated Letter</h2>
+
+{% if template_title %}
+<p class="letter-title">{{ template_title }}</p>
+{% endif %}
+
+<div class="letter-box">
+    <div
+        id="letterContent"
+        class="letter-editable"
+        contenteditable="true"
+        spellcheck="true"
+        role="textbox"
+        aria-multiline="true"
+        aria-label="Edit your letter"
+    >{{ letter }}</div>
+</div>
+
+<p class="edit-hint">✎ Click into the letter above to edit it. Your changes are used for both copying and downloading.</p>
+
+<button onclick="copyLetter()" class="btn btn-primary" style="margin-top: 10px;">
+    Copy Letter
+</button>
+
+
+<form action="{{ url_for('download_pdf') }}" method="POST" style="display: inline;" id="downloadForm">
+    <textarea name="letter_text" id="letterTextField" style="display:none;">{{ letter }}</textarea>
+    <input type="hidden" name="template_title" value="{{ template_title }}">
+    <button type="submit" class="btn btn-success" style="margin-top: 10px;">
+        Download as PDF
+    </button>
+</form>
+
+<br><br>
+
+<p>
+    <a href="{{ url_for('index') }}">← Back to Templates</a>
+</p>
+
+<script>
+const letterContent = document.getElementById('letterContent');
+const letterTextField = document.getElementById('letterTextField');
+const downloadForm = document.getElementById('downloadForm');
+
+// Reads the current (possibly edited) text out of the editable letter box.
+function getCurrentLetterText() {
+    return letterContent.innerText.replace(/\u00a0/g, ' ').trim();
+}
+
+// Keep the hidden field in sync as the user types, so the value is always
+// current even without waiting for the form submit event.
+letterContent.addEventListener('input', function () {
+    letterTextField.value = getCurrentLetterText();
+});
+
+// Belt-and-braces: also sync right before the PDF form is submitted.
+downloadForm.addEventListener('submit', function () {
+    letterTextField.value = getCurrentLetterText();
+});
+
+function copyLetter() {
+    const text = getCurrentLetterText();
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+            alert("Letter copied to clipboard!");
+        }).catch(function () {
+            fallbackCopy(text);
+        });
+    } else {
+        fallbackCopy(text);
+    }
+}
+
+function fallbackCopy(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    alert("Letter copied to clipboard!");
+}
+</script>
+
+{% endblock %}

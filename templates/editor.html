@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ template.title }}</h2>
+
+{% if error %}
+<div class="error-banner">{{ error }}</div>
+{% endif %}
+
+<form action="" method="POST" class="form-container" id="letterForm">
+
+    {% for field in placeholders %}
+    <div class="form-group">
+        <label for="{{ field }}">{{ field.replace("_", " ").title() }}</label>
+
+        {% if "date" in field.lower() %}
+        <div class="date-input-wrapper">
+            <input
+                type="date"
+                id="{{ field }}"
+                name="{{ field }}"
+                class="date-input"
+                value="{{ form_data.get(field, '') if form_data else '' }}"
+                required
+            >
+            <span class="calendar-icon" aria-hidden="true">📅</span>
+        </div>
+
+        {% elif field == "recipient_designation" %}
+        <div class="select-wrapper{% if form_data and form_data.get(field) %} filled{% endif %}">
+            <select id="{{ field }}" name="{{ field }}" required>
+                <option value="" disabled {% if not (form_data and form_data.get(field)) %}selected{% endif %}>Select Recipient Designation</option>
+                {% for designation in [
+                    "Head Of The Department",
+                    "Dean",
+                    "Principal",
+                    "Examination Controller"
+                ] %}
+                <option value="{{ designation }}" {% if form_data and form_data.get(field) == designation %}selected{% endif %}>{{ designation }}</option>
+                {% endfor %}
+            </select>
+            <span class="select-arrow" aria-hidden="true"></span>
+        </div>
+
+        {% elif field == "department" %}
+        <div class="select-wrapper{% if form_data and form_data.get(field) %} filled{% endif %}">
+            <select id="{{ field }}" name="{{ field }}" required>
+                <option value="" disabled {% if not (form_data and form_data.get(field)) %}selected{% endif %}>Select Department</option>
+                {% for dept in [
+                    "Computer Science and Engineering",
+                    "Electronics and Communication Engineering",
+                    "Information Technology",
+                    "Computer Science and Engineering (AI & ML)",
+                    "Electrical and Electronics Engineering",
+                    "Computer Science and Design (CSD)",
+                    "Artificial Intelligence and Data Science (AI & DS)"
+                ] %}
+                <option value="{{ dept }}" {% if form_data and form_data.get(field) == dept %}selected{% endif %}>{{ dept }}</option>
+                {% endfor %}
+            </select>
+            <span class="select-arrow" aria-hidden="true"></span>
+        </div>
+
+        {% elif field == "name" %}
+        <input
+            type="text"
+            id="{{ field }}"
+            name="{{ field }}"
+            value="{{ form_data.get(field, '') if form_data else '' }}"
+            pattern="^[A-Za-z ]+$"
+            title="Name can contain only letters and spaces"
+            placeholder="Enter your full name"
+            autocomplete="name"
+            required
+        >
+
+        {% elif field == "roll_number" %}
+        <input
+            type="text"
+            id="{{ field }}"
+            name="{{ field }}"
+            value="{{ form_data.get(field, '') if form_data else '' }}"
+            pattern="^2.[Kk][A-Za-z0-9]{7}$"
+            maxlength="10"
+            placeholder="e.g. 23K81A0548"
+            title="Roll number must be exactly 10 characters, start with 2, and have K or k as the 3rd character"
+            autocomplete="off"
+            required
+        >
+
+        {% elif field == "year" %}
+        <div class="select-wrapper{% if form_data and form_data.get(field) %} filled{% endif %}">
+            <select id="{{ field }}" name="{{ field }}" required>
+                <option value="" disabled {% if not (form_data and form_data.get(field)) %}selected{% endif %}>Select Year</option>
+                {% for yr in ["1st", "2nd", "3rd", "4th"] %}
+                <option value="{{ yr }}" {% if form_data and form_data.get(field) == yr %}selected{% endif %}>{{ yr }}</option>
+                {% endfor %}
+            </select>
+            <span class="select-arrow" aria-hidden="true"></span>
+        </div>
+
+        {% elif field == "section" %}
+        <div class="select-wrapper{% if form_data and form_data.get(field) %} filled{% endif %}">
+            <select id="{{ field }}" name="{{ field }}" required>
+                <option value="" disabled {% if not (form_data and form_data.get(field)) %}selected{% endif %}>Select Section</option>
+                {% for sec in ["A", "B", "C", "D"] %}
+                <option value="{{ sec }}" {% if form_data and form_data.get(field) == sec %}selected{% endif %}>{{ sec }}</option>
+                {% endfor %}
+            </select>
+            <span class="select-arrow" aria-hidden="true"></span>
+        </div>
+
+        {% elif field == "contact_number" %}
+        <input
+            type="tel"
+            id="{{ field }}"
+            name="{{ field }}"
+            value="{{ form_data.get(field, '') if form_data else '' }}"
+            pattern="^[6-9][0-9]{9}$"
+            maxlength="10"
+            inputmode="numeric"
+            placeholder="10-digit mobile number"
+            title="Contact number must be exactly 10 digits, contain no letters, and cannot start with 0-5"
+            autocomplete="off"
+            required
+        >
+
+        {% elif field == "subject" %}
+        <input
+            type="text"
+            id="{{ field }}"
+            name="{{ field }}"
+            value="{{ form_data.get(field, '') if form_data else '' }}"
+            required
+        >
+
+        {% else %}
+        <input
+            type="text"
+            id="{{ field }}"
+            name="{{ field }}"
+            value="{{ form_data.get(field, '') if form_data else '' }}"
+            required
+        >
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary" id="generateBtn">
+        Generate Letter
+    </button>
+</form>
+
+<p style="margin-top: 15px;">
+    <a href="{{ url_for('index') }}">← Back to Templates</a>
+</p>
+
+<script>
+(function () {
+    // No minimum/maximum date restriction.
+    document.querySelectorAll('input[type="date"]').forEach(function (input) {
+        input.removeAttribute('min');
+        input.removeAttribute('max');
+    });
+
+    const nameInput = document.getElementById('name');
+    if (nameInput) {
+        nameInput.addEventListener('input', function () {
+            this.value = this.value.replace(/[^A-Za-z ]/g, '');
+        });
+    }
+
+    const contactInput = document.getElementById('contact_number');
+    if (contactInput) {
+        contactInput.addEventListener('input', function () {
+            this.value = this.value.replace(/\D/g, '').slice(0, 10);
+        });
+    }
+
+    const rollInput = document.getElementById('roll_number');
+    if (rollInput) {
+        rollInput.addEventListener('input', function () {
+            this.value = this.value.toUpperCase().slice(0, 10);
+        });
+    }
+
+    // Real dropdown behaviour for all custom-styled select fields.
+    document.querySelectorAll('.select-wrapper').forEach(function (wrapper) {
+        const control = wrapper.querySelector('select');
+        const arrow = wrapper.querySelector('.select-arrow');
+        if (!control) return;
+
+        function openDropdown() {
+            wrapper.classList.add('open');
+            if (typeof control.showPicker === 'function') {
+                try { control.showPicker(); } catch (err) {}
+            }
+        }
+
+        function closeDropdown() {
+            wrapper.classList.remove('open');
+            control.blur();
+        }
+
+        if (arrow) {
+            arrow.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (wrapper.classList.contains('open')) {
+                    closeDropdown();
+                } else {
+                    control.focus();
+                    openDropdown();
+                }
+            });
+        }
+
+        control.addEventListener('focus', function () {
+            wrapper.classList.add('open');
+        });
+
+        control.addEventListener('blur', function () {
+            wrapper.classList.remove('open');
+        });
+
+        control.addEventListener('change', function () {
+            wrapper.classList.remove('open');
+            wrapper.classList.toggle('filled', Boolean(control.value));
+        });
+    });
+
+    document.querySelectorAll('.date-input-wrapper').forEach(function (wrapper) {
+        const input = wrapper.querySelector('.date-input');
+        const icon = wrapper.querySelector('.calendar-icon');
+
+        icon.addEventListener('click', function () {
+            if (input.showPicker) {
+                input.showPicker();
+            } else {
+                input.focus();
+            }
+        });
+    });
+
+    const form = document.getElementById('letterForm');
+    const generateBtn = document.getElementById('generateBtn');
+    const subjectInput = document.getElementById('subject');
+
+    form.addEventListener('submit', function () {
+        if (subjectInput && subjectInput.value.trim()) {
+            generateBtn.textContent = "Generating...";
+        } else {
+            generateBtn.textContent = "Generating...";
+        }
+
+        generateBtn.disabled = true;
+    });
+})();
+</script>
+{% endblock %}
