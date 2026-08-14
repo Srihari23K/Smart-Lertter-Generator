@@ -364,6 +364,7 @@ tbody td a:focus-visible {
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  min-width: 0;
   animation: slideIn .5s var(--ease) both;
 }
 
@@ -418,7 +419,6 @@ tbody td a:focus-visible {
   transform: translateY(-1px);
 }
 
-/* Interactive, custom-styled select dropdowns */
 .select-wrapper {
   position: relative;
   width: 100%;
@@ -434,8 +434,6 @@ tbody td a:focus-visible {
   background: #fff;
 }
 
-/* Chrome renders its own little arrow on <input list="..."> the same way
-   it does for date pickers — hide it so our custom arrow is the only one. */
 .select-wrapper input.dropdown-input::-webkit-calendar-picker-indicator {
   opacity: 0;
   cursor: pointer;
@@ -513,7 +511,6 @@ tbody td a:focus-visible {
   padding: .6rem;
 }
 
-/* Dropdown arrow state */
 .select-wrapper .select-arrow {
   pointer-events: auto;
 }
@@ -745,14 +742,21 @@ tbody td a:focus-visible {
   thead th, tbody td { padding: .85rem 1rem; font-size: .82rem; }
   tbody tr:hover td:first-child { padding-left: 1rem; }
   .btn { width: 100%; }
+
+  .date-input-wrapper .date-input {
+    padding: .9rem 2.6rem .9rem .85rem;
+    font-size: .9rem;
+  }
 }
 .date-input-wrapper {
     position: relative;
     width: 100%;
+    min-width: 0;
 }
 
 .date-input-wrapper .date-input {
     width: 100%;
+    min-width: 0;
     padding-right: 3.2rem;
 }
 
