@@ -157,7 +157,6 @@
 
 <script>
 (function () {
-    // No minimum/maximum date restriction.
     document.querySelectorAll('input[type="date"]').forEach(function (input) {
         input.removeAttribute('min');
         input.removeAttribute('max');
@@ -184,7 +183,6 @@
         });
     }
 
-    // Real dropdown behaviour for all custom-styled select fields.
     document.querySelectorAll('.select-wrapper').forEach(function (wrapper) {
         const control = wrapper.querySelector('select');
         const arrow = wrapper.querySelector('.select-arrow');
