@@ -1,18 +1,13 @@
 {% extends "base.html" %}
-
 {% block content %}
 <h2>{{ template.title }}</h2>
-
 {% if error %}
 <div class="error-banner">{{ error }}</div>
 {% endif %}
-
 <form action="" method="POST" class="form-container" id="letterForm">
-
     {% for field in placeholders %}
     <div class="form-group">
         <label for="{{ field }}">{{ field.replace("_", " ").title() }}</label>
-
         {% if "date" in field.lower() %}
         <div class="date-input-wrapper">
             <input
@@ -31,10 +26,10 @@
             <select id="{{ field }}" name="{{ field }}" required>
                 <option value="" disabled {% if not (form_data and form_data.get(field)) %}selected{% endif %}>Select Recipient Designation</option>
                 {% for designation in [
-                    "Head Of The Department",
-                    "Dean",
-                    "Principal",
-                    "Examination Controller"
+                    "The Head Of The Department",
+                    "The Dean",
+                    "The Principal",
+                    "The Examination Controller"
                 ] %}
                 <option value="{{ designation }}" {% if form_data and form_data.get(field) == designation %}selected{% endif %}>{{ designation }}</option>
                 {% endfor %}
