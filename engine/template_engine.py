@@ -44,7 +44,7 @@ class TemplateEngine:
         "Respected Sir/Madam,\n\n"
 
         "I, {{name}}, Roll No: {{roll_number}}, am a {{year}} Year student of {{department}} ({{section}})."
-        "I am suffering from {{health_issue}} today and due to this health condition I "
+        "I am suffering from {{reason_for_leave}} today and due to this health condition I "
         "am unable to continue attending the remaining classes for the day. As it is "
         "becoming difficult for me to concentrate and actively participate in the "
         "lectures, I kindly request you to grant me half-day leave for today.\n\n"
