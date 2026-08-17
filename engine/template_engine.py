@@ -14,7 +14,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Permission to Avail Leave \n\n"
         "I, {{name}}, Roll No: {{roll_number}}, am a {{year}} Year student of {{department}} ({{section}}). "
         "I am writing to formally request leave from {{start_date}} to {{end_date}} due to {{reason}}.\n\n"
         "I have ensured that any urgent assignments or pending work have been noted, "
@@ -39,12 +39,12 @@ class TemplateEngine:
         "Department of {{department}}\n"
         "St.Martin's Engineering College\n\n"
 
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Permission to Avail Half-Day Leave\n\n"
 
         "Respected Sir/Madam,\n\n"
 
         "I, {{name}}, Roll No: {{roll_number}}, am a {{year}} Year student of {{department}} ({{section}})."
-        "I am suffering from {{reason_for_leave}} today and due to this health condition I "
+        "Due to {{reason_for_leave}},I "
         "am unable to continue attending the remaining classes for the day. As it is "
         "becoming difficult for me to concentrate and actively participate in the "
         "lectures, I kindly request you to grant me half-day leave for today.\n\n"
@@ -74,7 +74,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Medical Leave Due to Health Reasons\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request medical leave from {{start_date}} to {{end_date}} due to {{medical_condition}}. "
         "I have consulted a doctor, and a medical certificate is attached for your reference.\n\n"
@@ -97,7 +97,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Permission to Attend Internship / Industrial Visit\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request permission to attend an internship/industrial visit at {{company_name}} from {{start_date}} to {{end_date}}. "
         "This internship/visit is relevant to my academic program and will provide practical exposure in {{field_or_domain}}.\n\n"
@@ -116,7 +116,7 @@ class TemplateEngine:
     content=(
         "Date: {{date}}\n\n"
         "To\n{{recipient_designation}},\n{{company_name}},\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Application for Internship Opportunity in Your Organization\n\n"
         "Dear Sir/Madam,\n\n"
         "I am {{name}}, a {{year}} Year student of {{department}} ({{section}}) at St.Martin's Engineering College, Roll No: {{roll_number}}. "
         "I am writing to express my interest in an internship position at {{company_name}} in the field of {{field_or_domain}} for the period {{start_date}} to {{end_date}}.\n\n"
@@ -140,7 +140,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Extension of Project Submission Deadline Due to Unavoidable Circumstances\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing on behalf of my project team (Members: {{team_members}}) to request an extension for submitting our project titled '{{project_title}}'.\n\n"
         "Due to {{reason_for_delay}}, we are unable to complete the project by the original deadline of {{original_deadline}}. "
@@ -164,7 +164,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Issuance of a Recommendation / Reference Letter\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to kindly request your recommendation for {{purpose}} at {{organization_name}}.\n\n"
         "I had the privilege of attending your course {{course_name}} during {{semester}}, and I also worked on {{project_or_assignment}} under your guidance. "
@@ -188,7 +188,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nController of Examinations,\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Re-evaluation and Rechecking of Examination Paper\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "appeared for the {{exam_name}} held on {{exam_date}}. I request re-evaluation/rechecking of my answer paper for the course {{course_code}} - {{course_name}}.\n\n"
         "My obtained marks were {{obtained_marks}}, and I believe that a re-evaluation is necessary due to {{reason_for_request}}. "
@@ -211,7 +211,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nOffice of the Registrar,\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Issuance of the Required Certificate\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request issuance of a {{certificate_type}} for the purpose of {{purpose}}.\n\n"
         "My details are as follows:\n"
@@ -236,7 +236,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nOffice of the Registrar,\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Issuance of Transfer / Migration Certificate\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request issuance of my {{certificate_type}} for the purpose of {{purpose}}.\n\n"
         "I have successfully completed my academic requirements at St.Martin's Engineering College and intend to continue my studies at {{new_institution}}. "
@@ -261,7 +261,7 @@ class TemplateEngine:
         "Date: {{date}}\n\n"
         "To\n{{recipient_designation}},\n{{organization_name}},\n\n"
         "Respected Sir Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Issuance of Internship / Training Completion Certificate\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}) at {{college_name}}, "
         "have successfully completed my internship/training at {{organization_name}} from {{start_date}} to {{end_date}} under the guidance of {{mentor_name}}.\n\n"
         "I kindly request you to issue a formal Internship/Training Completion Certificate stating the duration and nature of the training for my records and academic submission.\n\n"
@@ -282,7 +282,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nWarden, {{hostel_name}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir / Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Hostel Accommodation \n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request accommodation in {{hostel_name}} for the academic session {{session_year}}.\n\n"
         "Due to {{reason_for_request}}, I require a hostel room for the duration of {{duration}}. "
@@ -304,7 +304,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nThe Principal,\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir / Mdam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Fee Concession / Scholarship Assistance\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request a fee concession/scholarship for the academic session {{session_year}} due to {{reason_for_request}}.\n\n"
         "I have consistently maintained {{academic_performance}} and actively participated in {{extracurricular_activities}}. "
@@ -327,7 +327,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\n{{department_or_office}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir / Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Submission of Complaint / Grievance for Necessary Action\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to formally bring to your attention an issue regarding {{issue_description}}.\n\n"
         "Despite prior attempts to resolve the matter through {{previous_actions_taken}}, the problem persists. "
@@ -350,7 +350,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\n{{department_or_office}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir / Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Permission to Participate in a College Event / Extracurricular Activity\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "on behalf of {{club_or_team_name}}, am writing to request permission to conduct/participate in {{event_name}} scheduled on {{event_date}} at {{event_location}}.\n\n"
         "The event aims to {{event_purpose}} and will involve {{number_of_participants}} participants. "
@@ -372,7 +372,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir / Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Course Registration / Add-Drop Permission\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request permission to {{action}} the course '{{course_name}}' for the {{semester}} semester. "
         "The reason for this request is {{reason_for_request}}.\n\n"
@@ -394,7 +394,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Permission to Appear for Examination Despite Low Attendance\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request permission to appear for the {{exam_name}} scheduled on {{exam_date}}, "
         "despite having {{attendance_percentage}}% attendance in the course '{{course_name}}'.\n\n"
@@ -417,7 +417,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Leave to Participate in College Tour / Study Trip\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request leave from {{start_date}} to {{end_date}} to participate in the college-organized tour/study trip to {{tour_location}}.\n\n"
         "This trip is part of our academic/cultural activities, and I assure you that I will catch up on any missed classes or assignments.\n\n"
@@ -439,7 +439,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nController of Examinations,\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Permission to Appear for Make-up / Supplementary Examination\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "was unable to appear for the {{exam_name}} held on {{exam_date}} due to {{reason_for_missing_exam}}.\n\n"
         "I kindly request permission to appear for a make-up/supplementary examination at a convenient date. "
@@ -461,7 +461,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nOffice of the Registrar,\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Issuance of Official Academic Transcript\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request the issuance of my official grade/transcript for {{purpose}}.\n\n"
         "I have completed all required coursework and formalities, and I kindly request you to process my transcript at the earliest to facilitate {{reason_for_request}}.\n\n"
@@ -482,7 +482,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nDepartment of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Academic Counseling / Mentorship Meeting\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request an appointment for academic counseling/mentorship to discuss {{topic_or_issue}}.\n\n"
         "I seek your guidance regarding {{specific_concerns}} and believe that your advice will greatly assist me in improving my academic performance and planning my future courses/projects.\n\n"
@@ -504,7 +504,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nWarden, {{hostel_name}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Hostel Room Change\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request a change of my hostel room from {{current_room_number}} to {{requested_room_number}} due to {{reason_for_request}}.\n\n"
         "I assure you that I will comply with all hostel rules and maintain discipline. I kindly request your approval for this room change at the earliest.\n\n"
@@ -525,7 +525,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nLibrarian, {{library_name}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Library Membership / Access\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request library membership/access to {{library_name}} to utilize resources for my academic activities, research, and assignments.\n\n"
         "I kindly request you to grant me the necessary access and provide any required guidelines for library usage.\n\n"
@@ -546,7 +546,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\n{{department_or_office}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Complaint Regarding College Facilities and Request for Necessary Action\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to formally bring to your attention an issue regarding {{facility_issue_description}}.\n\n"
         "Despite previous attempts to resolve this matter through {{previous_actions_taken}}, the problem persists. "
@@ -569,7 +569,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nOffice of the Registrar,\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Issuance of Duplicate Student ID Card\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request the issuance of a duplicate student ID card as my previous ID was {{reason_for_duplicate_request}}.\n\n"
         "I kindly request you to process this request at the earliest so that I may continue to access college facilities without interruption.\n\n"
@@ -590,7 +590,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nTransport Office,\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Issuance / Renewal of College Bus Pass\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request the issuance/renewal of my college bus pass for the academic session {{session_year}}.\n\n"
         "I will be using the bus facility to commute from {{residential_address}} to the college daily. "
@@ -611,7 +611,7 @@ class TemplateEngine:
         "Date: {{date}}\n\n"
         "To\n{{recipient_designation}},\n{{organization_name}},\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Internship Extension / Resignation\n\n"
         "I, {{name}}, a student of {{college_name}}, Roll No: {{roll_number}}, am writing regarding my internship at {{organization_name}}.\n\n"
         "I would like to {{action}} my internship, originally scheduled from {{start_date}} to {{end_date}}, due to {{reason_for_request}}.\n\n"
         "I kindly request your consideration and guidance regarding this matter. I am grateful for the learning opportunities provided during my internship.\n\n"
@@ -631,7 +631,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\n{{department_or_office}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Recommendation for Placement / Job Opportunities\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request your recommendation/reference for placement/job opportunities at {{company_name}}.\n\n"
         "I have completed {{relevant_courses_or_projects}} and believe that your recommendation will significantly support my application. "
@@ -653,7 +653,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nHead of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected Sir/Madam,\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Project Mentor / Supervisor Change\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am writing to request {{request_type}} for my project titled '{{project_title}}'.\n\n"
         "The reason for this request is {{reason_for_request}}. "
@@ -678,7 +678,7 @@ class TemplateEngine:
         "{{department}}\n"
         "St.Martin's Engineering College\n\n"
 
-        "Subject: {{subject}}\n\n"
+        "Subject: Request for Leave to Attend a Family Function\n\n"
 
         "Respected Sir/Madam,\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
@@ -712,7 +712,7 @@ class TemplateEngine:
 "To\n{{recipient_designation}},\n{{department_or_office}},\n"
 "St.Martin's Engineering College\n\n"
 "Respected Sir/Madam,\n\n"
-"Subject: {{subject}}\n\n"
+"Subject: Request for Permission to Participate in Hackathon / Competition\n\n"
 "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
 "am writing to request permission to participate in the {{competition_name}} scheduled on {{competition_date}} at {{competition_location}}.\n\n"
 "This competition focuses on solving real-time problems and provides me with a great opportunity to apply my knowledge, "
@@ -736,7 +736,7 @@ class TemplateEngine:
         "To\n{{recipient_designation}},\nOffice of the Registrar / Department of {{department}},\n"
         "St.Martin's Engineering College\n\n"
         "Respected {{recipient_name}},\n\n"
-        "Subject: {{subject}}\n\n"
+        "Subject: Submission of Medical Certificate and Request for Necessary Consideration\n\n"
         "I, {{name}}, Roll No: {{roll_number}}, a {{year}} Year student of {{department}} ({{section}}), "
         "am submitting my medical certificate for the period from {{start_date}} to {{end_date}} due to {{reason_for_medical_leave}}.\n\n"
         "I kindly request you to record my absence accordingly and grant necessary consideration for any missed academic work or examinations.\n\n"
@@ -747,10 +747,7 @@ class TemplateEngine:
         "Contact: {{contact_number}}\n"
         "Attachment: Medical Certificate\n"
     )
-)
-
-}
-
+)}
     def get_template(self, template_key: str):
         return self.templates.get(template_key, None)
     def normalize_placeholder(self, name):
@@ -759,12 +756,9 @@ class TemplateEngine:
         template = self.get_template(template_key)
         if not template:
             return []
-
         raw = extract_placeholders(template.content)
-
         normalized = []
         seen = set()
-
         for p in raw:
             n = self.normalize_placeholder(p)
             if n == "date":
@@ -773,33 +767,22 @@ class TemplateEngine:
                 seen.add(n)
                 normalized.append(n)
         return normalized
-
     def generate_letter(self, template_key: str, data: dict):
         template = self.get_template(template_key)
         if not template:
             return "❌ Template not found"
-       
         data["date"] = datetime.now().strftime("%d-%m-%Y")
-
-        if 'subject' not in data:
-            data['subject'] = ""
-
         normalized_data = {}
-
         for key, value in data.items():
             if isinstance(value, str):
                 try:
                     value = datetime.strptime(value, "%Y-%m-%d").strftime("%d-%m-%Y")
                 except ValueError:
                     pass
-
             normalized_data[self.normalize_placeholder(key)] = value
-
         for key, value in list(normalized_data.items()):
             normalized_data[key.replace("_", " ")] = value
-
         return replace_placeholders(template.content, normalized_data)
-
     def list_templates(self):
         return [{"key": k, "title": v.title} for k, v in self.templates.items()]
 engine_instance = TemplateEngine()
